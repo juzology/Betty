@@ -5,24 +5,29 @@
  * Return: Always 0 (Success)
  */
 int main(void)
-{
-	int n;
-	int m;
+{	
+	int ones;
+	int tens;
 
-	for (n = 48 ; n <= 57 ; n++)
+	for(tens='0'; tens<='9'; tens++)
 	{
-		for (m = 48 ; m <= 57 ; m++)
+		for(ones='0'; ones<='9'; ones++)
 		{
-			putchar(n);
-			putchar(m);
-
-			if ((n != 57) || (m != 57))
+			if (!((ones == tens) || (tens > ones)))
 			{
-				putchar(',');
-				putchar(' ');
+				putchar(tens);
+				putchar(ones);
+				if (!(ones == '9' && tens == '8'))
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 	}
+
 	putchar('\n');
-	return (0);
+	return(0);
+
 }
+
