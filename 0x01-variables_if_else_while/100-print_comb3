@@ -13,13 +13,16 @@ int main(void)
 	{
 		for (m = 0 ; m <= 9 ; m++)
 		{
-			putchar(n);
-			putchar(m);
-
-			if ((n != 9) || (m != 8))
+			if (!((n == m) || (n > m)))
 			{
-				putchar(',');
-				putchar(' ');
+				putchar(n);
+				putchar(m);
+
+				if ((n != 9) || (m != 8))
+				{	
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 	}
